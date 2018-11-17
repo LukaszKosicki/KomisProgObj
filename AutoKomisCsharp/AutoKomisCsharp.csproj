@@ -49,6 +49,7 @@
     <Compile Include="Ford.cs" />
     <Compile Include="Honda.cs" />
     <Compile Include="Hornet.cs" />
+    <Compile Include="Komis.cs" />
     <Compile Include="Motocykl.cs" />
     <Compile Include="Multipla.cs" />
     <Compile Include="Mustang.cs" />
