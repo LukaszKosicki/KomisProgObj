@@ -43,12 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bandit.cs" />
     <Compile Include="DanePoczatkowe.cs" />
+    <Compile Include="Fiat.cs" />
+    <Compile Include="Ford.cs" />
+    <Compile Include="Honda.cs" />
+    <Compile Include="Hornet.cs" />
     <Compile Include="Motocykl.cs" />
+    <Compile Include="Multipla.cs" />
+    <Compile Include="Mustang.cs" />
+    <Compile Include="Panda.cs" />
     <Compile Include="Pojazd.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ranger.cs" />
     <Compile Include="Samochod.cs" />
+    <Compile Include="Suzuki.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -10,7 +10,7 @@ namespace AutoKomisCsharp
     {
         public override string wyswietlTypPojazdu() => "Motocykl";
 
-        public Motocykl(float cena, float marza, int rocznik, string marka, string model) : base(cena, marza, rocznik, marka, model)
+        public Motocykl(float cena, float marza, int rocznik) : base(cena, marza, rocznik)
             {
             }
     }

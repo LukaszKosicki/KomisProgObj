@@ -11,8 +11,6 @@ namespace AutoKomisCsharp
         private float fCenaZakupu;
         private float fMarza;
         private int iRokProdukcji;
-        private string marka;
-        private string model;
 
         public float Marza { get; }
         public float CenaZakupu { get; }
@@ -30,17 +28,13 @@ namespace AutoKomisCsharp
             fCenaZakupu = 0;
             fMarza = 0;
             iRokProdukcji = 0;
-            marka = "";
-            model = "";
         }
 
-        public Pojazd(float cena, float marza, int rocznik, string marka, string model)
+        public Pojazd(float cena, float marza, int rocznik)
         {
             fCenaZakupu = cena;
             fMarza = marza;
             iRokProdukcji = rocznik;
-            this.marka = marka;
-            this.model = model;
         }
 
         
