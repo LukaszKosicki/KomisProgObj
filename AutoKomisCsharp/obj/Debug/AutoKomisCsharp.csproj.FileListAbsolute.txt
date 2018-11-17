@@ -1,1 +1,7 @@
 c:\users\student\documents\visual studio 2015\Projects\AutoKomisCsharp\AutoKomisCsharp\bin\Debug\AutoKomisCsharp.exe.config
+C:\Users\student\Desktop\AutoKomisCsharp\AutoKomisCsharp\bin\Debug\AutoKomisCsharp.exe.config
+C:\Users\student\Desktop\AutoKomisCsharp\AutoKomisCsharp\bin\Debug\AutoKomisCsharp.exe
+C:\Users\student\Desktop\AutoKomisCsharp\AutoKomisCsharp\bin\Debug\AutoKomisCsharp.pdb
+C:\Users\student\Desktop\AutoKomisCsharp\AutoKomisCsharp\obj\Debug\AutoKomisCsharp.csprojResolveAssemblyReference.cache
+C:\Users\student\Desktop\AutoKomisCsharp\AutoKomisCsharp\obj\Debug\AutoKomisCsharp.exe
+C:\Users\student\Desktop\AutoKomisCsharp\AutoKomisCsharp\obj\Debug\AutoKomisCsharp.pdb

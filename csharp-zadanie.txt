@@ -1,0 +1,75 @@
+Proszę napisać w pełni kompletny program, realizujący następujące zagadnienie:
+
+Komis samochodowy:
+komis samochodowy składa się z kolekcji pojazdów. Kolekcja pojazdów zbudowana jest na podstawie klasy abstrakcyjnej Pojazd.
+
+
+Klasa Pojazd posiada pola prywatne:
+
+float fCenaZakupu ;
+float fMarza ;
+int	  iRokProdukcji;
+
+wlasności:
+Marza (get)
+CenaZakupu (get)
+RokProdukcji (get)
+
+oraz metody
+
+void wyswietlRok() ;
+float podajCeneKoncowa(); (cena koncowa = cena zakupu + marza)
+
+string wyswietlMarke(); (abstrakcyjna)
+string wyswietlModel(); (abstrakcyjna)
+string wyswietlTypPojazdu(); (abstrakcyjna)
+
+z klasy pojazd dziedzicza:
+klasa Samochod
+klasa Motocykl
+
+te klasy sa abstrakcyjne - przeslaniają metodę
+wyswietlTypPojazdu() ;
+
+Dostępna jest następująca hierarchia obietków:
+
+Samochod
+|
+---->Ford
+|	|
+|	---->Mustang
+|	|
+|	---->Ranger
+|
+---->Fiat
+	|
+	---->Panda
+	|
+	---->Multipla
+	
+	
+Motocykl
+|
+---->Suzuki
+|	|
+|	---->SuperSport
+|
+---->Honda
+
+
+Napisać aplikację, która będzie wyświetała menu
+
+---------------------------
+1. Wyswietl listę pojazdów
+2. Dodaj nowy pojazd
+3. Wyszukaj pojazdy
+4. Sprzedaj pojazd
+---------------------------
+
+Funkcja Dodaj nowy pojazd wyswietli menu dostepnych
+pojazdów do dodania. Wymaga wprowadzenia wartości zakupu,marzy i rocznika
+
+Funkcja Wyszukaj pojazd powinna działać w dwóch wariantach:
+
+1. Wyszukaj po przedziale cenowym : od do
+2. Wyszukaj po przedziale rodznikowym : od do
