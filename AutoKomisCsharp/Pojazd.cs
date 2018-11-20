@@ -12,12 +12,15 @@ namespace AutoKomisCsharp
         private float fMarza;
         private int iRokProdukcji;
 
-        public float Marza { get; }
-        public float CenaZakupu { get; }
-        public int RokProdukcji { get; }
+        public float Marza { get { return fMarza; } }
+        public float CenaZakupu { get { return fCenaZakupu; } }
+        public int RokProdukcji { get { return iRokProdukcji; } }
 
-        public string WyswietlRok() => $"{RokProdukcji}";
-        public float podajCeneKoncowa() => CenaZakupu + Marza;
+        public void WyswietlRok()
+        {
+            Console.WriteLine($"{iRokProdukcji}");
+        }
+        public float podajCeneKoncowa() => fCenaZakupu + fMarza;
 
         public abstract string wyswietlMarke();
         public abstract string wyswietlModel();
