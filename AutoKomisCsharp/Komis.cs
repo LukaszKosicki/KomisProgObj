@@ -22,6 +22,7 @@ namespace AutoKomisCsharp
                 Console.WriteLine("1 - Wyświetl listę pojazdów");
                 Console.WriteLine("2 - Dodaj pojazd");
                 Console.WriteLine("3 - Szukaj pojazdu");
+                Console.WriteLine("4 - Sprzedaj pojazd");
                 Console.WriteLine("\nPanie.... ? Wybierz numer z opcji.");
                 wybor = int.Parse(Console.ReadLine());
                 Console.Clear();
@@ -36,6 +37,9 @@ namespace AutoKomisCsharp
                     case 3:
                         SzukajPojazdu();
                         break;
+                    case 4:
+                        SprzedajPojazd();
+                        break;
                 }
             } while (wybor != 0);
 
@@ -47,9 +51,12 @@ namespace AutoKomisCsharp
             if (lista.Count == 0) Console.WriteLine("Brak pojazdów. Aby powrócić do menu wciśnij dowolnu klawisz.");
             else
             {
+                int i = 0;
                 Console.WriteLine("Pojazdy w bazie");
                 foreach (Pojazd p in lista)
                 {
+                    i++;
+                    Console.WriteLine($"Pojazd nr {i}");
                     Console.WriteLine($"Typ pojazdu: {p.wyswietlTypPojazdu()}");
                     Console.WriteLine($"Marka: {p.wyswietlMarke()}");
                     Console.WriteLine($"Model: {p.wyswietlModel()}");
@@ -57,10 +64,9 @@ namespace AutoKomisCsharp
                     Console.WriteLine($"Cena ostateczna: {p.podajCeneKoncowa()}");
                     Console.WriteLine();
                 }
-                Console.WriteLine("Aby powrócić do menu kliknij Pan dowolny klawisz.");
+                Console.WriteLine("Po zapoznaniu się z autami wciśnij dowolny klawisz.");
             }
             Console.ReadKey();
-            Menu();
         }
 
         public static void DodajNowyPojazd()
@@ -249,6 +255,30 @@ namespace AutoKomisCsharp
                 }
             } while (wybor != 0);
                     
+        }
+
+        public static void SprzedajPojazd()
+        {
+            WyswietlPojazdy(Pojazdy);
+
+            int nr = 0;
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Podaj numer sprzedanego pojazdu.");
+                    nr = int.Parse(Console.ReadLine());
+                    if (nr < 1 || nr > Pojazdy.Count) throw new Exception();
+                }
+                catch
+                {
+                    Console.WriteLine("Podaj poprawny numer pojazdu.");
+                }
+            } while (nr < 1 || nr > Pojazdy.Count);
+            Pojazd p = Pojazdy[nr-1];
+            Pojazdy.Remove(p);
+            Console.WriteLine($"Gratulację!! Sprzedałeś pojazd za { p.CenaZakupu }");
+            Console.ReadKey();
         }
 
         public static char PotwierdzDane(int min, int max)

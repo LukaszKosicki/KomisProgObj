@@ -5,3 +5,10 @@ C:\Users\student\Desktop\AutoKomisCsharp\AutoKomisCsharp\bin\Debug\AutoKomisCsha
 C:\Users\student\Desktop\AutoKomisCsharp\AutoKomisCsharp\obj\Debug\AutoKomisCsharp.csprojResolveAssemblyReference.cache
 C:\Users\student\Desktop\AutoKomisCsharp\AutoKomisCsharp\obj\Debug\AutoKomisCsharp.exe
 C:\Users\student\Desktop\AutoKomisCsharp\AutoKomisCsharp\obj\Debug\AutoKomisCsharp.pdb
+C:\Users\lukas\Pulpit\Projekty\MotoCSharp\AutoKomisCsharp\bin\Debug\AutoKomisCsharp.exe.config
+C:\Users\lukas\Pulpit\Projekty\MotoCSharp\AutoKomisCsharp\bin\Debug\AutoKomisCsharp.exe
+C:\Users\lukas\Pulpit\Projekty\MotoCSharp\AutoKomisCsharp\bin\Debug\AutoKomisCsharp.pdb
+C:\Users\lukas\Pulpit\Projekty\MotoCSharp\AutoKomisCsharp\obj\Debug\AutoKomisCsharp.csprojAssemblyReference.cache
+C:\Users\lukas\Pulpit\Projekty\MotoCSharp\AutoKomisCsharp\obj\Debug\AutoKomisCsharp.csproj.CoreCompileInputs.cache
+C:\Users\lukas\Pulpit\Projekty\MotoCSharp\AutoKomisCsharp\obj\Debug\AutoKomisCsharp.exe
+C:\Users\lukas\Pulpit\Projekty\MotoCSharp\AutoKomisCsharp\obj\Debug\AutoKomisCsharp.pdb
