@@ -13,5 +13,7 @@ namespace AutoKomisCsharp
         public Samochod(float cena,float marza,int rocznik) : base(cena, marza, rocznik)
             {
             }
+
+       
     }
 }

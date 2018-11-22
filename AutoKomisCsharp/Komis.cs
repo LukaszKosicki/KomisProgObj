@@ -12,11 +12,13 @@ namespace AutoKomisCsharp
         public static void Menu()
         {
             Pojazdy = DanePoczatkowe.BazaPojazdow;
-            
+
+            Console.WriteLine(Pojazdy[0].Marka);
             int wybor;
             do
             {
                 Console.Clear();
+                Console.WriteLine(Pojazdy[0].Marka);
                 Console.WriteLine("Szrot Samochodów Pożądanych");
                 Console.WriteLine("\nMenu");
                 Console.WriteLine("1 - Wyświetl listę pojazdów");
@@ -29,7 +31,7 @@ namespace AutoKomisCsharp
                 switch (wybor)
                 {
                     case 1:
-                        WyswietlPojazdy(Pojazdy);
+                        PokazDane();
                         break;
                     case 2:
                         DodajNowyPojazd();
@@ -44,6 +46,19 @@ namespace AutoKomisCsharp
             } while (wybor != 0);
 
 
+        }
+
+        public static void PokazDane()
+        {
+            List<Pojazd> Pojazdy = DanePoczatkowe.BazaPojazdow;
+            foreach(Pojazd p in Pojazdy)
+            {
+                Console.WriteLine(p.GetType());
+                Console.WriteLine(p.ToString());
+                Console.WriteLine(p.GetHashCode());
+                Console.WriteLine();
+            }
+            Console.ReadKey();
         }
 
         public static void WyswietlPojazdy(List<Pojazd> lista)
@@ -123,7 +138,7 @@ namespace AutoKomisCsharp
                                 Console.WriteLine("Podaj porawną wartość. Jeśli używasz liczby z przecinkiem, użyj ',' a nie '.'");
                             }
                         }
-                        while (rocznik < 1800)
+                        while (rocznik < 1800 || rocznik > DateTime.Now.Year)
                         {
                             try
                             {
@@ -198,7 +213,8 @@ namespace AutoKomisCsharp
                                 Console.WriteLine($"Podaj prawidłowy rok. Rok musi być większu od roku {maxRok}.");
                             }
                         } while (maxRok < minRok);
-                        ok = PotwierdzDane(minRok, maxRok);
+                        string dane = $"{minRok} - {maxRok}";
+                        ok = PotwierdzDane(dane);
                         
                     } while ((minRok == 0 || maxRok == 0 || minRok > maxRok) || char.ToLower(ok) == 'n');
                     nowaLista = new List<Pojazd>();
@@ -243,7 +259,8 @@ namespace AutoKomisCsharp
                                 Console.WriteLine($"Podaj prawidłową wartość. Cena musi być większu od {maxCena}.");
                             }
                         } while (maxCena < minCena || minCena <= 0);
-                        ok = PotwierdzDane(minCena, maxCena);
+                        string dane = $"{minCena} - {maxCena}";
+                        ok = PotwierdzDane(dane);
                     } while ((minCena == 0 || maxCena == 0 || minCena > maxCena) || char.ToLower(ok) == 'n');
                     nowaLista = new List<Pojazd>();
 
@@ -259,36 +276,49 @@ namespace AutoKomisCsharp
 
         public static void SprzedajPojazd()
         {
-            WyswietlPojazdy(Pojazdy);
-
-            int nr = 0;
+            Pojazd p;
+            char poprawnosc = 'n';
             do
             {
-                try
+                WyswietlPojazdy(Pojazdy);
+                Console.Clear();
+                int nr = 0;
+                do
                 {
-                    Console.WriteLine("Podaj numer sprzedanego pojazdu.");
-                    nr = int.Parse(Console.ReadLine());
-                    if (nr < 1 || nr > Pojazdy.Count) throw new Exception();
-                }
-                catch
-                {
-                    Console.WriteLine("Podaj poprawny numer pojazdu.");
-                }
-            } while (nr < 1 || nr > Pojazdy.Count);
-            Pojazd p = Pojazdy[nr-1];
+                    try
+                    {
+                        Console.WriteLine("Podaj numer sprzedanego pojazdu.");
+                        nr = int.Parse(Console.ReadLine());
+                        Console.Clear();
+                        if (nr < 1 || nr > Pojazdy.Count) throw new Exception();
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Podaj poprawny numer pojazdu.");
+                    }
+                } while (nr < 1 || nr > Pojazdy.Count);
+                p = Pojazdy[nr - 1];
+                Console.WriteLine("Czy wybrałeś dobry pojazd?(t/n)");
+                string dane = $"{p.wyswietlMarke()}\n{p.wyswietlModel()}\n{p.RokProdukcji}";
+                poprawnosc = PotwierdzDane(dane);
+            } while (poprawnosc == 'n');
+            
             Pojazdy.Remove(p);
+            Console.Clear();
             Console.WriteLine($"Gratulację!! Sprzedałeś pojazd za { p.CenaZakupu }");
             Console.ReadKey();
         }
-
-        public static char PotwierdzDane(int min, int max)
+       
+        public static char PotwierdzDane(string dane)
         {
             char ok = 'a';
             do
             {
                 try
                 {
-                    Console.WriteLine($"Czy przedział {min}-{max} jest prawidłowy?");
+                    Console.WriteLine("Czy wprowadzone dane są prawidłowe?(t/n)");
+                    Console.WriteLine(dane);
+                    
                     ok = char.Parse(Console.ReadLine());
                 }
                 catch

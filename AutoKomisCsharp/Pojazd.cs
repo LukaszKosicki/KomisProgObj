@@ -15,6 +15,7 @@ namespace AutoKomisCsharp
         public float Marza { get { return fMarza; } }
         public float CenaZakupu { get { return fCenaZakupu; } }
         public int RokProdukcji { get { return iRokProdukcji; } }
+        public string Marka { get { return wyswietlMarke(); } }
 
         public void WyswietlRok()
         {
@@ -40,7 +41,10 @@ namespace AutoKomisCsharp
             iRokProdukcji = rocznik;
         }
 
-        
+        private static void WyswietlCosam()
+        {
+            Console.WriteLine("DADADD");
+        }
         
             
         
